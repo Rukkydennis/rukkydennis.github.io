@@ -1,0 +1,270 @@
+:root {
+    --primary-color: #ff4d6d;
+    --secondary-color: #ff8fa3;
+    --bg-gradient: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+    --card-bg: rgba(255, 255, 255, 0.85);
+    --text-color: #c9184a;
+    --yes-btn-bg: #2ecc71;
+    --no-btn-bg: #ff4757;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Floating Hearts Background */
+.background-hearts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.background-hearts span {
+    position: absolute;
+    bottom: -50px;
+    font-size: 30px;
+    animation: floatUp 15s linear infinite;
+    opacity: 0.3;
+}
+
+.background-hearts span:nth-child(1) {
+    left: 10%;
+    animation-duration: 12s;
+    animation-delay: 0s;
+}
+
+.background-hearts span:nth-child(2) {
+    left: 20%;
+    animation-duration: 15s;
+    animation-delay: 2s;
+    font-size: 40px;
+}
+
+.background-hearts span:nth-child(3) {
+    left: 30%;
+    animation-duration: 10s;
+    animation-delay: 4s;
+}
+
+.background-hearts span:nth-child(4) {
+    left: 40%;
+    animation-duration: 18s;
+    animation-delay: 1s;
+    font-size: 25px;
+}
+
+.background-hearts span:nth-child(5) {
+    left: 55%;
+    animation-duration: 14s;
+    animation-delay: 6s;
+}
+
+.background-hearts span:nth-child(6) {
+    left: 70%;
+    animation-duration: 16s;
+    animation-delay: 3s;
+    font-size: 35px;
+}
+
+.background-hearts span:nth-child(7) {
+    left: 85%;
+    animation-duration: 13s;
+    animation-delay: 5s;
+}
+
+.background-hearts span:nth-child(8) {
+    left: 95%;
+    animation-duration: 11s;
+    animation-delay: 2s;
+}
+
+.background-hearts span:nth-child(9) {
+    left: 50%;
+    animation-duration: 19s;
+    animation-delay: 7s;
+}
+
+.background-hearts span:nth-child(10) {
+    left: 5%;
+    animation-duration: 17s;
+    animation-delay: 8s;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.3;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.container {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 30px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    max-width: 450px;
+    width: 100%;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.title {
+    font-family: 'Fredoka', cursive;
+    color: var(--text-color);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.5);
+    line-height: 1.2;
+}
+
+.gif-container {
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.minion-gif {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    min-height: 200px;
+    object-fit: cover;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    min-height: 60px;
+}
+
+.btn {
+    padding: 14px 34px;
+    font-size: 1.3rem;
+    font-family: 'Fredoka', sans-serif;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.yes-btn {
+    background-color: var(--yes-btn-bg);
+    color: white;
+    box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
+    animation: pulse 2s infinite;
+}
+
+.yes-btn:hover {
+    transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 8px 20px rgba(46, 204, 113, 0.6);
+    background-color: #27ae60;
+    animation: none;
+    /* Stop pulsing on hover so it doesn't jitter */
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 10px 25px rgba(46, 204, 113, 0.6);
+    }
+
+    100% {
+        box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
+    }
+}
+
+.no-btn {
+    background-color: var(--no-btn-bg);
+    color: white;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+}
+
+.no-btn:hover {
+    background-color: #d63031;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+        margin: 10px;
+    }
+
+    .btn {
+        padding: 12px 24px;
+        font-size: 1.1rem;
+    }
+
+    .background-hearts span {
+        font-size: 20px;
+    }
+}
